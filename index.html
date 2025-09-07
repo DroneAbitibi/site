@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     :root{
-      --bg1:#1b2e1a; /* vert forêt sombre */
-      --bg2:#3b4d2a; /* olive foncé */
+      --bg1:#0f1c0f; /* vert forêt très foncé */
+      --bg2:#263321; /* olive encore plus sombre */
       --text:#f5f7f5;
       --muted:#dfe6de;
-      --btn:#6b8e23; /* olive */
-      --btnHover:#7fa137;
+      --btn:#3e5c2c; /* vert olive foncé pour bouton */
+      --btnHover:#4c7036;
       --ring: rgba(255,255,255,.18);
     }
     *{box-sizing:border-box}
@@ -44,15 +44,25 @@
       transition: transform .15s ease, background .2s ease;
     }
     a.button:hover {background:var(--btnHover); transform:translateY(-1px);}
+    .note {
+      margin-top:32px;
+      font-size:14px;
+      color:var(--muted);
+      opacity:0.8;
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <h1>Drone Abitibi</h1>
-    <p>Retrouvez-nous sur nos réseaux sociaux :</p>
+    <p>Retrouvez-nous sur nos réseaux sociaux officiels :</p>
     <div class="buttons">
       <a class="button" href="https://instagram.com/droneabitibi" target="_blank" rel="noopener">Instagram @droneabitibi</a>
       <a class="button" href="https://facebook.com/droneabitibi" target="_blank" rel="noopener">Facebook /droneabitibi</a>
+    </div>
+    <div class="note">
+      Drone Abitibi est une initiative locale en développement.<br>
+      Cette page temporaire sert uniquement à rediriger vers nos comptes officiels.
     </div>
   </div>
 </body>
