@@ -2,41 +2,58 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Drone Abitibi – Page temporaire</title>
+  <title>Drone Abitibi – Réseaux sociaux</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    :root{
+      --bg1:#1b2e1a; /* vert forêt sombre */
+      --bg2:#3b4d2a; /* olive foncé */
+      --text:#f5f7f5;
+      --muted:#dfe6de;
+      --btn:#6b8e23; /* olive */
+      --btnHover:#7fa137;
+      --ring: rgba(255,255,255,.18);
+    }
+    *{box-sizing:border-box}
     body {
       margin:0;
-      font-family: system-ui, sans-serif;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
       display:flex;
       flex-direction:column;
       justify-content:center;
       align-items:center;
       min-height:100vh;
-      background:linear-gradient(135deg,#0f172a,#1e293b);
-      color:#f1f5f9;
+      background:linear-gradient(135deg,var(--bg1),var(--bg2));
+      color:var(--text);
       text-align:center;
-      padding:20px;
+      padding:24px;
     }
-    h1 {font-size:clamp(28px,6vw,42px);margin:0 0 12px}
-    p {max-width:600px;margin:0 0 20px;color:#cbd5e1}
-    a {
+    .wrap{max-width:720px;width:100%}
+    h1 {font-size:clamp(28px,6vw,44px);margin:0 0 12px}
+    p {margin:0 0 20px;color:var(--muted)}
+    .buttons{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+    a.button {
       display:inline-block;
-      margin-top:12px;
-      padding:12px 18px;
-      border-radius:8px;
-      background:#38bdf8;
-      color:#0f172a;
+      padding:14px 22px;
+      border-radius:12px;
+      background:var(--btn);
+      color:var(--text);
       font-weight:600;
       text-decoration:none;
+      box-shadow:0 6px 20px var(--ring);
+      transition: transform .15s ease, background .2s ease;
     }
-    a:hover {background:#22d3ee}
+    a.button:hover {background:var(--btnHover); transform:translateY(-1px);}
   </style>
 </head>
 <body>
-  <h1>Drone Abitibi</h1>
-  <p>Notre site complet est en construction.<br>
-     En attendant, vous pouvez nous suivre sur Facebook pour découvrir nos images aériennes en Abitibi-Témiscamingue.</p>
-  <a href="https://www.facebook.com/ton-lien-ici" target="_blank" rel="noopener">Page Facebook</a>
+  <div class="wrap">
+    <h1>Drone Abitibi</h1>
+    <p>Retrouvez-nous sur nos réseaux sociaux :</p>
+    <div class="buttons">
+      <a class="button" href="https://instagram.com/droneabitibi" target="_blank" rel="noopener">Instagram @dvdrone</a>
+      <a class="button" href="https://facebook.com/droneabitibi" target="_blank" rel="noopener">Facebook /droneabitibi</a>
+    </div>
+  </div>
 </body>
 </html>
