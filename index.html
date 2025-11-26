@@ -2,14 +2,16 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Drone Abitibi – Réseaux sociaux</title>
+  <title>Drone Abitibi – Projet d’imagerie aérienne</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Drone Abitibi est un projet d’entreprise d’imagerie aérienne en développement en Abitibi-Témiscamingue. Pour des services professionnels dès maintenant, consultez DV Drone – Imagerie aérienne.">
   <style>
     :root{
       --bg1:#0f1c0f; /* vert forêt très foncé */
       --bg2:#263321; /* olive encore plus sombre */
       --text:#f5f7f5;
       --muted:#dfe6de;
+      --accent:#a9c48a;
       --btn:#3e5c2c; /* vert olive foncé pour bouton */
       --btnHover:#4c7036;
       --ring: rgba(255,255,255,.18);
@@ -29,9 +31,47 @@
       padding:24px;
     }
     .wrap{max-width:720px;width:100%}
-    h1 {font-size:clamp(28px,6vw,44px);margin:0 0 12px}
-    p {margin:0 0 20px;color:var(--muted)}
-    .buttons{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+    h1 {font-size:clamp(30px,6vw,46px);margin:0 0 8px}
+    .tagline {
+      margin:0 0 18px;
+      font-size:clamp(16px,3.2vw,19px);
+      color:var(--accent);
+      font-weight:500;
+    }
+    p {margin:0 0 16px;color:var(--muted)}
+    .pill {
+      display:inline-block;
+      padding:6px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.18);
+      font-size:12px;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      margin-bottom:18px;
+      color:var(--muted);
+    }
+    .services {
+      list-style:none;
+      padding:0;
+      margin:8px 0 16px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px 16px;
+      justify-content:center;
+      font-size:14px;
+      color:var(--muted);
+    }
+    .services li::before {
+      content:"• ";
+      opacity:0.8;
+    }
+    .buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+      justify-content:center;
+      margin-top:8px
+    }
     a.button {
       display:inline-block;
       padding:14px 22px;
@@ -42,27 +82,60 @@
       text-decoration:none;
       box-shadow:0 6px 20px var(--ring);
       transition: transform .15s ease, background .2s ease;
+      font-size:14px;
+      min-width:230px;
     }
     a.button:hover {background:var(--btnHover); transform:translateY(-1px);}
     .note {
-      margin-top:32px;
-      font-size:14px;
+      margin-top:24px;
+      font-size:13px;
       color:var(--muted);
-      opacity:0.8;
+      opacity:0.9;
+      line-height:1.6;
+    }
+    .highlight-link {
+      color:var(--accent);
+      font-weight:600;
+      text-decoration:none;
     }
   </style>
 </head>
 <body>
   <div class="wrap">
+    <div class="pill">Projet d’imagerie aérienne en Abitibi</div>
+
     <h1>Drone Abitibi</h1>
-    <p>Retrouvez-nous sur nos réseaux sociaux officiels :</p>
+    <p class="tagline">
+      Marque en développement centrée sur l’imagerie aérienne et la cartographie par drone en Abitibi-Témiscamingue.
+    </p>
+
+    <p>
+      Drone Abitibi est un projet d’entreprise en phase de préparation. Le volet opérationnel
+      d’imagerie aérienne est actuellement offert à titre de <strong>travailleur autonome</strong>
+      sous la bannière&nbsp;<strong>DV Drone – Imagerie aérienne</strong>.
+    </p>
+
+    <p>Suivez l’évolution du projet Drone Abitibi sur nos réseaux sociaux&nbsp;:</p>
+
     <div class="buttons">
-      <a class="button" href="https://instagram.com/droneabitibi" target="_blank" rel="noopener">Instagram @droneabitibi</a>
-      <a class="button" href="https://facebook.com/droneabitibi" target="_blank" rel="noopener">Facebook /droneabitibi</a>
+      <a class="button" href="https://instagram.com/droneabitibi" target="_blank" rel="noopener">
+        Instagram&nbsp;@droneabitibi
+      </a>
+      <a class="button" href="https://facebook.com/droneabitibi" target="_blank" rel="noopener">
+        Facebook&nbsp;/droneabitibi
+      </a>
     </div>
+
     <div class="note">
-      Drone Abitibi est une initiative locale en développement.<br>
-      Cette page temporaire sert uniquement à rediriger vers nos comptes officiels.
+      Pour toute <strong>demande de services professionnels</strong> (photos/vidéos aériennes,
+      orthomosaïques, suivi de chantier, etc.), veuillez vous adresser à&nbsp;:
+      <br>
+      <a class="highlight-link" href="https://dvdrone.ca" target="_blank" rel="noopener">
+        DV Drone – Imagerie aérienne
+      </a>
+      <br><br>
+      Drone Abitibi évoluera progressivement vers une structure d’entreprise distincte. Cette
+      page sert pour l’instant de point de contact et de vitrine du projet.
     </div>
   </div>
 </body>
