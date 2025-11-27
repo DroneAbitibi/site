@@ -31,14 +31,19 @@
       padding:24px;
     }
     .wrap{max-width:720px;width:100%}
-    h1 {font-size:clamp(30px,6vw,46px);margin:0 0 8px}
-    .tagline {
-      margin:0 0 18px;
-      font-size:clamp(16px,3.2vw,19px);
-      color:var(--accent);
-      font-weight:500;
+
+
+
+    h1 {
+      font-size: clamp(20px, 6vw, 30px);
+      margin: 0 0 8px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 700;
+      letter-spacing: 3px;   /* correspond au logo */
+      color: var(--text);
     }
     p {margin:0 0 16px;color:var(--muted)}
+    /* Ajustement du pill au-dessus du logo */
     .pill {
       display:inline-block;
       padding:6px 14px;
@@ -47,8 +52,20 @@
       font-size:12px;
       letter-spacing:.04em;
       text-transform:uppercase;
-      margin-bottom:18px;
+      margin-bottom:12px; /* un peu plus serré pour le look */
       color:var(--muted);
+    }
+
+    /* --- Logo en haut de la page --- */
+    .logo {
+      display:flex;
+      justify-content:center;
+      margin-bottom:6px;
+    }
+    .logo svg {
+      display:block;
+      width:300px;
+      height:auto;
     }
     .services {
       list-style:none;
@@ -102,9 +119,15 @@
 </head>
 <body>
   <div class="wrap">
+
+    <!-- Logo en haut -->
     <div class="pill">Projet d’imagerie aérienne en Abitibi</div>
 
-    <h1>Drone Abitibi</h1>
+    <div class="logo">
+      <img src="assets/logo_fond_vert.svg" alt="Logo Drone Abitibi">
+    </div>
+
+    <h1>DRONE ABITIBI</h1>
     <p class="tagline">
       Marque en développement centrée sur l’imagerie aérienne et la cartographie par drone en Abitibi-Témiscamingue.
     </p>
