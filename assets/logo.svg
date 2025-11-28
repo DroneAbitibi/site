@@ -6,9 +6,9 @@
   <defs>
     <style>
       :root {
-        --vert-fonce:   #000000;
-        --vert-accent:  #000000;
-        --texte:        #000000;
+        --vert-fonce:   #0f1c0f;
+        --vert-accent:  #102d12;
+        --texte:        #111111;
       }
 
       .drone-body { fill: var(--vert-fonce); }
@@ -139,9 +139,8 @@
       <circle cx="5" cy="-5" r="1.4" class="inner-circle" />
       <circle cx="5" cy="-5" r="1.4" class="icon-stroke" />
     </g>
-
   </g>
-
+  
   <!-- Texte
   <text x="100" y="190"
         text-anchor="middle"

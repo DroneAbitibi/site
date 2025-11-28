@@ -6,9 +6,10 @@
   <defs>
     <style>
       :root {
-        --vert-fonce:   #000000;
-        --vert-accent:  #000000;
-        --texte:        #000000;
+        --vert-fonce:   #ffffff;
+        --vert-accent:  #ffffff;
+        --texte:        #ffffff;
+        --trait:        #000000;
       }
 
       .drone-body { fill: var(--vert-fonce); }
@@ -21,7 +22,7 @@
 
       .propeller {
         fill: var(--vert-accent);
-        opacity: 0.95;
+
       }
 
       .propeller-blur {
@@ -33,13 +34,12 @@
 
       .inner-circle {
         fill: #ffffff;
-        opacity: 0.95;
       }
 
       /* Icônes de secteurs (traits verts sur fond blanc) */
       .icon-stroke {
         fill: none;
-        stroke: var(--vert-fonce);
+        stroke: var(--trait);
         stroke-width: 1.6;
         stroke-linecap: round;
         stroke-linejoin: round;

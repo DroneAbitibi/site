@@ -6,9 +6,10 @@
   <defs>
     <style>
       :root {
-        --vert-fonce:   #000000;
-        --vert-accent:  #000000;
-        --texte:        #000000;
+        --vert-fonce:   #3e5c2c;   /* accent du site = couleur du drone */
+        --vert-accent:  #a9c48a;   /* text du site = hélices claires */
+        --texte:        #f5f7f5;   /* texte blanc cassé */
+        --trait:        #0f1c0f;   /* tracés noirs/verts très foncés */
       }
 
       .drone-body { fill: var(--vert-fonce); }
@@ -39,7 +40,7 @@
       /* Icônes de secteurs (traits verts sur fond blanc) */
       .icon-stroke {
         fill: none;
-        stroke: var(--vert-fonce);
+        stroke: var(--trait);
         stroke-width: 1.6;
         stroke-linecap: round;
         stroke-linejoin: round;
