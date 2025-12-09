@@ -141,6 +141,42 @@
       padding-top: 0.6rem;
     }
 
+    .report {
+      background: linear-gradient(135deg, rgba(169,196,138,0.08), rgba(15,28,15,0.7));
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 0.9rem;
+      padding: 1.2rem 1.4rem;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+      margin-top: 0.8rem;
+    }
+
+    .report h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .report-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.8rem 1.2rem;
+      margin: 0.4rem 0 0.6rem;
+    }
+
+    .report-item {
+      background: rgba(20,25,18,0.72);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 0.6rem;
+      padding: 0.7rem 0.8rem;
+    }
+
+    .report-item strong {
+      color: var(--accent);
+    }
+
+    .report small {
+      color: rgba(223,230,222,0.7);
+    }
+
     /* Leaflet UI ajustements */
     .leaflet-control-layers {
       background: rgba(20,25,18,0.92);
@@ -198,10 +234,12 @@
     <header class="header">
       <h1>Démonstration de couches cartographiques</h1>
       <p>
-        Cette carte interactive présente un exemple d’orthophoto combinée à différentes
-        couches dérivées : modèle numérique de terrain (DTM), modèle numérique de
-        surface (DSM) et courbes de niveau. Utilisez le bouton de couches dans la carte
-        pour activer ou désactiver les différents calques.
+        Cette carte interactive superpose plusieurs couches issues d’une même mission
+        de photogrammétrie : l’orthophoto pour la vue réaliste, un modèle numérique de
+        terrain (DTM) pour le relief du sol nu, un modèle numérique de surface (DSM) qui
+        inclut les objets présents (bâtiments, arbres) et des courbes de niveau pour
+        faciliter la lecture des pentes. Activez ou désactivez les calques à l’aide du
+        sélecteur dans la carte pour comparer les rendus.
       </p>
     </header>
 
@@ -239,6 +277,55 @@
         </p>
       </aside>
     </div>
+
+    <section class="report">
+      <h2>Résumé du traitement photogrammétrique</h2>
+      <p>
+        Ce jeu de données a été traité avec <strong>OpenDroneMap 3.5.6</strong> en
+        complément des couches affichées. Le rapport ci-dessous présente les principaux
+        indicateurs de qualité et le déroulement de la mission.
+      </p>
+
+      <div class="report-grid">
+        <div class="report-item">
+          <strong>Calendrier</strong><br>
+          Date de capture : 29/08/2025 de 09:34:49 à 09:40:47<br>
+          Date de traitement : 01/09/2025 à 19:36:34<br>
+          Durée de traitement : 6 min 27 s
+        </div>
+        <div class="report-item">
+          <strong>Couverture</strong><br>
+          Surface : 0,050356 km²<br>
+          Images reconstruites : 62 / 64 (96,9&nbsp;%)<br>
+          Points reconstruits (sparse) : 17&nbsp;782 / 18&nbsp;283 (97,3&nbsp;%)
+        </div>
+        <div class="report-item">
+          <strong>Qualité des mesures</strong><br>
+          GSD moyen : 4,2 cm<br>
+          Référence géographique : GPS<br>
+          Erreur GPS moyenne : 1,42 m (X -0,005 / Y 0,006 / Z 0,000)
+        </div>
+        <div class="report-item">
+          <strong>Précision 3D</strong><br>
+          RMS : X 0,140 m, Y 0,124 m, Z 0,387 m (Total 0,230 m)<br>
+          CE90 horizontal : 2,173 m (relatif 0,243 m)<br>
+          LE90 vertical : 0,974 m (relatif 0,444 m)
+        </div>
+        <div class="report-item">
+          <strong>Caractéristiques de reconstruction</strong><br>
+          Traits détectés : 10&nbsp;000 (1&nbsp;139 reconstruits, longueur moyenne 4,65 images)<br>
+          Modèle caméra : v2 dji fc9113 (4096×3072, brown, 0.6666)
+        </div>
+      </div>
+
+      <small>
+        Processus : import des clichés, détection des points d’intérêt, appariement et
+        nuage de points sparse, ajustement par faisceaux, génération du DSM puis du DTM,
+        production des tuiles d’orthophoto et calcul des courbes de niveau avant
+        publication cartographique. Les métriques ci-dessus aident à valider la qualité
+        du vol et des produits livrés.
+      </small>
+    </section>
   </div>
 
   <!-- Leaflet JS -->
