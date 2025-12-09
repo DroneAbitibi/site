@@ -253,10 +253,26 @@
     // Centre approximatif (à adapter à ta zone de démonstration)
     var map = L.map('map', {
       center: [48.23, -79.02], // Ex.: Rouyn-Noranda
-      zoom: 14,
+      zoom: 13,
       minZoom: 10,
       maxZoom: 22
     });
+
+    var esriImagery = L.tileLayer(
+      'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+      {
+        maxZoom: 20,
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics'
+      }
+    );
+
+    var osm = L.tileLayer(
+      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors'
+      }
+    );
 
     // --- Couches de base / overlays ---
     // 1) Orthophoto (base)
@@ -264,8 +280,9 @@
     var orthophoto = L.tileLayer(
       'https://dvdrone-datasets.s3.ca-central-1.amazonaws.com/test001/tiles_ortho/{z}/{x}/{y}.png',
       {
+        minZoom: 10,
         maxZoom: 22,
-        attribution: '&copy; Source orthophoto',
+        attribution: '&copy; DV Drone - Orthophoto',
         detectRetina: true
       }
     ).addTo(map);
@@ -274,10 +291,10 @@
     var dtm = L.tileLayer(
       'https://dvdrone-datasets.s3.ca-central-1.amazonaws.com/test001/tiles_dtm/{z}/{x}/{y}.png',
       {
+        minZoom: 10,
         maxZoom: 22,
         opacity: 0.7,
-        attribution: '&copy; Modèle numérique de terrain',
-        detectRetina: true
+        attribution: '&copy; DV Drone – DTM',
       }
     );
 
@@ -285,25 +302,13 @@
     var dsm = L.tileLayer(
       'https://dvdrone-datasets.s3.ca-central-1.amazonaws.com/test001/tiles_dsm/{z}/{x}/{y}.png',
       {
+        minZoom: 10,
         maxZoom: 22,
         opacity: 0.6,
-        attribution: '&copy; Modèle numérique de surface',
-        detectRetina: true
+        attribution: '&copy; DV Drone – DSM',
       }
     );
-
-    // 4) Courbes de niveau – en tuiles ou WMS
-    // Exemple en tuiles PNG (à adapter)
-    var contours = L.tileLayer(
-      'https://example.com/tiles/contours/{z}/{x}/{y}.png',
-      {
-        maxZoom: 22,
-        opacity: 0.9,
-        attribution: '&copy; Courbes de niveau',
-        detectRetina: true
-      }
-    );
-
+    
     // Si tu as un service WMS pour les courbes, ce serait plutôt:
     /*
     var contours = L.tileLayer.wms('https://example.com/geoserver/wms', {
@@ -316,14 +321,14 @@
 
     // --- Contrôle de couches ---
     var baseMaps = {
-      "Orthophoto": orthophoto
-      // Tu pourrais ajouter ici un fond OSM, etc.
+      "Orthophoto (Drone Abitibi)": orthophoto,
+      "Esri World Imagery": esriImagery,
+      "OpenStreetMap": osm
     };
 
     var overlayMaps = {
       "DTM (MNT)": dtm,
       "DSM": dsm,
-      "Courbes de niveau": contours
     };
 
     L.control.layers(baseMaps, overlayMaps, {
