@@ -7,14 +7,15 @@
   <meta name="description" content="Drone Abitibi est un projet d'entreprise d'imagerie aérienne en développement en Abitibi-Témiscamingue. Pour des services professionnels dès maintenant, consultez DV Drone – Imagerie aérienne.">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
   <style>
     :root{
-      --bg1:#0f1c0f; /* vert forêt très foncé */
-      --bg2:#263321; /* olive encore plus sombre */
+      --bg1:#0f1c0f;
+      --bg2:#263321;
       --text:#f5f7f5;
       --muted:#dfe6de;
       --accent:#a9c48a;
-      --btn:#3e5c2c; /* vert olive foncé pour bouton */
+      --btn:#3e5c2c;
       --btnHover:#4c7036;
       --ring: rgba(255,255,255,.18);
     }
@@ -34,18 +35,15 @@
     }
     .wrap{max-width:720px;width:100%}
 
-
-
     h1 {
       font-size: clamp(20px, 6vw, 30px);
       margin: 0 0 8px;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-weight: 700;
-      letter-spacing: 3px;   /* correspond au logo */
+      letter-spacing: 3px;
       color: var(--text);
     }
     p {margin:0 0 16px;color:var(--muted)}
-    /* Ajustement du pill au-dessus du logo */
+
     .pill {
       display:inline-block;
       padding:6px 14px;
@@ -54,43 +52,30 @@
       font-size:12px;
       letter-spacing:.04em;
       text-transform:uppercase;
-      margin-bottom:12px; /* un peu plus serré pour le look */
+      margin-bottom:12px;
       color:var(--muted);
     }
 
-    /* --- Logo en haut de la page --- */
     .logo {
       display:flex;
       justify-content:center;
       margin-bottom:6px;
     }
-    .logo svg {
-      display:block;
+    .logo img {
       width:300px;
       height:auto;
     }
-    .services {
-      list-style:none;
-      padding:0;
-      margin:8px 0 16px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px 16px;
-      justify-content:center;
-      font-size:14px;
-      color:var(--muted);
-    }
-    .services li::before {
-      content:"• ";
-      opacity:0.8;
-    }
-    .buttons{
+
+    /* Boutons génériques */
+    .buttons,
+    .internal-links {
       display:flex;
       flex-wrap:wrap;
       gap:16px;
       justify-content:center;
-      margin-top:8px
+      margin-top:12px;
     }
+
     a.button {
       display:inline-block;
       padding:14px 22px;
@@ -105,15 +90,20 @@
       min-width:230px;
     }
     a.button:hover {background:var(--btnHover); transform:translateY(-1px);}
-    .secondary-links {
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      justify-content:center;
-      margin-top:20px;
+
+    /* Sections */
+    .section-title {
+      margin-top:28px;
+      margin-bottom:8px;
+      font-size:15px;
+      font-weight:600;
+      letter-spacing:.03em;
+      color:var(--accent);
+      text-transform:uppercase;
     }
+
     .note {
-      margin-top:24px;
+      margin-top:32px;
       font-size:13px;
       color:var(--muted);
       opacity:0.9;
@@ -126,10 +116,10 @@
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
 
-    <!-- Logo en haut -->
     <div class="pill">Projet d'imagerie aérienne en Abitibi</div>
 
     <div class="logo">
@@ -147,43 +137,39 @@
       sous la bannière&nbsp;<strong>DV Drone - Imagerie aérienne</strong>.
     </p>
 
-    <p>Suivez l'évolution du projet Drone Abitibi sur nos réseaux sociaux&nbsp;:</p>
+    <!-- SECTION RÉSEAUX SOCIAUX -->
+    <div class="section-title">Réseaux sociaux</div>
 
     <div class="buttons">
-      <a class="button" href="https://instagram.com/droneabitibi" target="_blank" rel="noopener">
-        Instagram&nbsp;@DroneAbitibi
-      </a>
-      <a class="button" href="https://facebook.com/droneabitibi" target="_blank" rel="noopener">
-        Facebook&nbsp;/DroneAbitibi
-      </a>
-      <a class="button" href="https://www.youtube.com/@DroneAbitibi" target="_blank" rel="noopener">
-        YouTube&nbsp;@DroneAbitibi
-      </a>
-      <a class="button" href="https://www.tiktok.com/@DroneAbitibi" target="_blank" rel="noopener">
-        TikTok&nbsp;@DroneAbitibi
-      </a>
+      <a class="button" href="https://instagram.com/droneabitibi" target="_blank">Instagram @DroneAbitibi</a>
+      <a class="button" href="https://facebook.com/droneabitibi" target="_blank">Facebook /DroneAbitibi</a>
+      <a class="button" href="https://www.youtube.com/@DroneAbitibi" target="_blank">YouTube @DroneAbitibi</a>
+      <a class="button" href="https://www.tiktok.com/@DroneAbitibi" target="_blank">TikTok @DroneAbitibi</a>
     </div>
 
-    <div class="secondary-links">
-      <a class="button" href="demo-photogrammetrie.html">
-        Démonstration&nbsp;: couches & rapport photogrammétrie
-      </a>
-      <a class="button" href="limites.html">
-        Limites et possibilités d'un vol de drone
-      </a>
-    </div>
+    <!-- SECTION LIENS DU SITE -->
+	<div class="section-title">Ressources du site</div>
+	<div class="internal-links">
+	  <a class="button" href="limites.html">
+	    Limites et possibilités d'un vol de drone
+	  </a>
+	  <a class="button" href="demo-photogrammetrie.html">
+	    Démonstration – Couches cartographiques
+	  </a>
+	</div>
 
     <div class="note">
       Pour toute <strong>demande de services professionnels</strong> (photos/vidéos aériennes,
       orthomosaïques, suivi de chantier, etc.), veuillez vous adresser à&nbsp;:
       <br>
-      <a class="highlight-link" href="https://dvdrone.ca" target="_blank" rel="noopener">
+      <a class="highlight-link" href="https://dvdrone.ca" target="_blank">
         DV Drone - Imagerie aérienne
       </a>
       <br><br>
       Drone Abitibi évoluera progressivement vers une structure d'entreprise distincte. Cette
       page sert pour l'instant de point de contact et de vitrine du projet.
     </div>
+
   </div>
 </body>
 </html>
