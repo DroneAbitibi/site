@@ -63,16 +63,26 @@
       gap: 0.5rem;
     }
 
-    .logo {
-      display: flex;
-      justify-content: center;
-      margin: 0.3rem 0 0.8rem;
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 0.3rem 0 0.4rem;
     }
 
-    .logo img {
-      width: min(320px, 60vw);
+    .brand img {
+      width: min(120px, 35vw);
       height: auto;
       display: block;
+    }
+
+    .brand-name {
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      font-weight: 600;
+      text-transform: uppercase;
+      white-space: nowrap;
     }
 
     .header h1 {
@@ -280,8 +290,9 @@
   <div class="page">
     <a href="index.html" class="back">← Retour à l'accueil</a>
 
-    <div class="logo">
+    <div class="brand">
       <img src="assets/logo_vert.svg" alt="Logo Drone Abitibi">
+      <span class="brand-name">Drone Abitibi</span>
     </div>
 
     <header class="header">
