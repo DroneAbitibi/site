@@ -63,16 +63,26 @@
       gap: 0.5rem;
     }
 
-    .logo {
-      display: flex;
-      justify-content: center;
-      margin: 0.3rem 0 0.8rem;
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 0.3rem 0 0.4rem;
     }
 
-    .logo img {
-      width: min(320px, 60vw);
+    .brand img {
+      width: min(120px, 35vw);
       height: auto;
       display: block;
+    }
+
+    .brand-name {
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      font-weight: 600;
+      text-transform: uppercase;
+      white-space: nowrap;
     }
 
     .header h1 {
@@ -280,8 +290,9 @@
   <div class="page">
     <a href="index.html" class="back">← Retour à l'accueil</a>
 
-    <div class="logo">
+    <div class="brand">
       <img src="assets/logo_vert.svg" alt="Logo Drone Abitibi">
+      <span class="brand-name">Drone Abitibi</span>
     </div>
 
     <header class="header">
@@ -290,9 +301,8 @@
         Cette carte interactive superpose plusieurs couches issues d’une même mission
         de photogrammétrie : l’orthophoto pour la vue réaliste, un modèle numérique de
         terrain (DTM) pour le relief du sol nu, un modèle numérique de surface (DSM) qui
-        inclut les objets présents (bâtiments, arbres) et des courbes de niveau pour
-        faciliter la lecture des pentes. Activez ou désactivez les calques à l’aide du
-        sélecteur dans la carte pour comparer les rendus.
+        inclut les objets présents (bâtiments, arbres). Activez ou désactivez les calques
+        à l’aide du sélecteur dans la carte pour comparer les rendus.
       </p>
     </header>
 
@@ -316,10 +326,6 @@
           <li>
             <span class="chip">DSM</span>
             <strong>Modèle numérique de surface</strong> – altitude incluant bâtiments, arbres, structures.
-          </li>
-          <li>
-            <span class="chip">Courbes</span>
-            <strong>Courbes de niveau</strong> – lignes d’élévation permettant de lire rapidement le relief.
           </li>
         </ul>
 
@@ -378,8 +384,8 @@
       <small>
         Étapes clés : capture des clichés, repérage des points communs, calcul du nuage de
         points, ajustement 3D, génération des modèles de terrain et de surface, puis
-        création des tuiles d’orthophoto et des courbes de niveau pour la carte. Ces
-        indicateurs permettent de vérifier rapidement la qualité du vol et des produits.
+        création des tuiles d’orthophoto pour la carte. Ces indicateurs permettent de
+        vérifier rapidement la qualité du vol et des produits.
       </small>
     </section>
   </div>
