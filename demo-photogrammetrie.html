@@ -351,7 +351,7 @@
       center: [centerLat, centerLng],
       zoom: 16,              // à ajuster selon le niveau de détail souhaité
       minZoom: 15,           // pour éviter de trop dézoomer
-      maxZoom: 22,           // adapté à tes tuiles z=19
+      maxZoom: 21,           // adapté à tes tuiles z=19
       maxBounds: bounds,     // limite le déplacement à ce carré
       maxBoundsViscosity: 1  // effet “élastique” aux limites (1 = bloqué net)
     });
@@ -423,9 +423,9 @@
     };
 
     var overlayMaps = {
-      "Orthophoto (Drone Abitibi)": orthophoto,
-      "DTM (Drone Abitibi)": dtm,
-      "DSM (Drone Abitibi)": dsm,
+      "Orthophoto": orthophoto,
+      "DTM": dtm,
+      "DSM": dsm,
     };
 
     L.control.layers(baseMaps, overlayMaps, {
