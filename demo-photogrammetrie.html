@@ -63,6 +63,18 @@
       gap: 0.5rem;
     }
 
+    .logo {
+      display: flex;
+      justify-content: center;
+      margin: 0.3rem 0 0.8rem;
+    }
+
+    .logo img {
+      width: min(320px, 60vw);
+      height: auto;
+      display: block;
+    }
+
     .header h1 {
       margin: 0;
       font-size: 1.6rem;
@@ -145,36 +157,73 @@
       background: linear-gradient(135deg, rgba(169,196,138,0.08), rgba(15,28,15,0.7));
       border: 1px solid rgba(255,255,255,0.07);
       border-radius: 0.9rem;
-      padding: 1.2rem 1.4rem;
+      padding: 1.4rem 1.5rem;
       box-shadow: 0 18px 40px rgba(0,0,0,0.55);
       margin-top: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
     }
 
     .report h2 {
-      margin: 0 0 0.5rem;
-      font-size: 1.1rem;
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .report .lead {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
     }
 
     .report-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 0.8rem 1.2rem;
-      margin: 0.4rem 0 0.6rem;
+      gap: 1rem 1.2rem;
     }
 
-    .report-item {
-      background: rgba(20,25,18,0.72);
+    .report-card {
+      background: rgba(20,25,18,0.82);
       border: 1px solid rgba(255,255,255,0.05);
-      border-radius: 0.6rem;
-      padding: 0.7rem 0.8rem;
+      border-radius: 0.75rem;
+      padding: 0.95rem 1rem;
+      display: grid;
+      gap: 0.35rem;
     }
 
-    .report-item strong {
+    .report-card .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 0.75rem;
+      color: rgba(223,230,222,0.75);
+      margin: 0;
+    }
+
+    .report-card h3 {
+      margin: 0;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    .report-card ul {
+      margin: 0;
+      padding-left: 1.05rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .report-card li {
+      margin-bottom: 0.3rem;
+    }
+
+    .report-card strong {
       color: var(--accent);
+      font-weight: 700;
     }
 
     .report small {
-      color: rgba(223,230,222,0.7);
+      color: rgba(223,230,222,0.72);
+      line-height: 1.6;
     }
 
     /* Leaflet UI ajustements */
@@ -231,6 +280,10 @@
   <div class="page">
     <a href="index.html" class="back">← Retour à l'accueil</a>
 
+    <div class="logo">
+      <img src="assets/logo_vert.svg" alt="Logo Drone Abitibi">
+    </div>
+
     <header class="header">
       <h1>Démonstration de couches cartographiques</h1>
       <p>
@@ -280,50 +333,53 @@
 
     <section class="report">
       <h2>Résumé du traitement photogrammétrique</h2>
-      <p>
-        Ce jeu de données a été traité avec <strong>OpenDroneMap 3.5.6</strong> en
-        complément des couches affichées. Le rapport ci-dessous présente les principaux
-        indicateurs de qualité et le déroulement de la mission.
+      <p class="lead">
+        Présentation simplifiée des données de vol pour une lecture rapide par le public.
+        Les valeurs proviennent du même traitement <strong>OpenDroneMap 3.5.6</strong>
+        ayant servi à produire les couches affichées sur la carte.
       </p>
 
       <div class="report-grid">
-        <div class="report-item">
-          <strong>Calendrier</strong><br>
-          Date de capture : 29/08/2025 de 09:34:49 à 09:40:47<br>
-          Date de traitement : 01/09/2025 à 19:36:34<br>
-          Durée de traitement : 6 min 27 s
+        <div class="report-card">
+          <p class="eyebrow">Mission</p>
+          <h3>Vol du 29 août 2025</h3>
+          <ul>
+            <li>Décollage 09:34, atterrissage 09:40 (6 min 27 s).</li>
+            <li>Traitement réalisé le 1<sup>er</sup> septembre avec <strong>OpenDroneMap 3.5.6</strong>.</li>
+          </ul>
         </div>
-        <div class="report-item">
-          <strong>Couverture</strong><br>
-          Surface : 0,050356 km²<br>
-          Images reconstruites : 62 / 64 (96,9&nbsp;%)<br>
-          Points reconstruits (sparse) : 17&nbsp;782 / 18&nbsp;283 (97,3&nbsp;%)
+        <div class="report-card">
+          <p class="eyebrow">Zone couverte</p>
+          <h3>Environ 5 hectares</h3>
+          <ul>
+            <li>62 photos utilisées sur 64 (97&nbsp;%).</li>
+            <li>17&nbsp;782 points reconstruits sur 18&nbsp;283 (97&nbsp;%).</li>
+            <li>GSD moyen de <strong>4,2&nbsp;cm/pixel</strong> pour la netteté.</li>
+          </ul>
         </div>
-        <div class="report-item">
-          <strong>Qualité des mesures</strong><br>
-          GSD moyen : 4,2 cm<br>
-          Référence géographique : GPS<br>
-          Erreur GPS moyenne : 1,42 m (X -0,005 / Y 0,006 / Z 0,000)
+        <div class="report-card">
+          <p class="eyebrow">Positionnement</p>
+          <h3>Référencé par GPS</h3>
+          <ul>
+            <li>Erreur GPS moyenne : 1,42&nbsp;m.</li>
+            <li>Précision estimée : CE90 <strong>2,17&nbsp;m</strong>, LE90 <strong>0,97&nbsp;m</strong>.</li>
+          </ul>
         </div>
-        <div class="report-item">
-          <strong>Précision 3D</strong><br>
-          RMS : X 0,140 m, Y 0,124 m, Z 0,387 m (Total 0,230 m)<br>
-          CE90 horizontal : 2,173 m (relatif 0,243 m)<br>
-          LE90 vertical : 0,974 m (relatif 0,444 m)
-        </div>
-        <div class="report-item">
-          <strong>Caractéristiques de reconstruction</strong><br>
-          Traits détectés : 10&nbsp;000 (1&nbsp;139 reconstruits, longueur moyenne 4,65 images)<br>
-          Modèle caméra : v2 dji fc9113 (4096×3072, brown, 0.6666)
+        <div class="report-card">
+          <p class="eyebrow">Qualité 3D</p>
+          <h3>Ajustement des points</h3>
+          <ul>
+            <li>RMS : X 0,14&nbsp;m, Y 0,12&nbsp;m, Z 0,39&nbsp;m.</li>
+            <li>Modèle caméra : DJI FC9113 (4096×3072).</li>
+          </ul>
         </div>
       </div>
 
       <small>
-        Processus : import des clichés, détection des points d’intérêt, appariement et
-        nuage de points sparse, ajustement par faisceaux, génération du DSM puis du DTM,
-        production des tuiles d’orthophoto et calcul des courbes de niveau avant
-        publication cartographique. Les métriques ci-dessus aident à valider la qualité
-        du vol et des produits livrés.
+        Étapes clés : capture des clichés, repérage des points communs, calcul du nuage de
+        points, ajustement 3D, génération des modèles de terrain et de surface, puis
+        création des tuiles d’orthophoto et des courbes de niveau pour la carte. Ces
+        indicateurs permettent de vérifier rapidement la qualité du vol et des produits.
       </small>
     </section>
   </div>
