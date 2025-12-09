@@ -142,10 +142,14 @@
     </g>
 
   </g>
+    <!-- Texte
   <text x="100" y="190"
         text-anchor="middle"
         class="logo-text">
     DRONE ABITIBI
+  </text>  
+  -->
 </svg>
+
 
 
