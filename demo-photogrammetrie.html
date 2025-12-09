@@ -250,12 +250,23 @@
 
   <script>
     // --- Initialisation de la carte ---
-    // Centre approximatif (à adapter à ta zone de démonstration)
+    // Centre de ta zone
+    var centerLat = 48.36437985117837;
+    var centerLng = -79.12920231790572;
+    
+    // Bornes d’un carré d’environ 2 km x 2 km autour du centre
+    var bounds = L.latLngBounds(
+      [48.35539673942846, -79.14272313921768], // sud, ouest
+      [48.37336296292828, -79.11568149659377]  // nord, est
+    );
+    
     var map = L.map('map', {
-      center: [48.23, -79.02], // Ex.: Rouyn-Noranda
-      zoom: 13,
-      minZoom: 10,
-      maxZoom: 22
+      center: [centerLat, centerLng],
+      zoom: 16,              // à ajuster selon le niveau de détail souhaité
+      minZoom: 15,           // pour éviter de trop dézoomer
+      maxZoom: 22,           // adapté à tes tuiles z=19
+      maxBounds: bounds,     // limite le déplacement à ce carré
+      maxBoundsViscosity: 1  // effet “élastique” aux limites (1 = bloqué net)
     });
 
     var esriImagery = L.tileLayer(
@@ -264,7 +275,7 @@
         maxZoom: 20,
         attribution: 'Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics'
       }
-    );
+    ).addTo(map); // <-- ACTIVÉ PAR DÉFAUT
 
     var osm = L.tileLayer(
       'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -273,17 +284,16 @@
         attribution: '&copy; OpenStreetMap contributors'
       }
     );
-
     // --- Couches de base / overlays ---
     // 1) Orthophoto (base)
     // Source tuile orthophoto
     var orthophoto = L.tileLayer(
       'https://dvdrone-datasets.s3.ca-central-1.amazonaws.com/test001/tiles_ortho/{z}/{x}/{y}.png',
       {
-        minZoom: 10,
+        minZoom: 15,
         maxZoom: 22,
+        tms: true,      // IMPORTANT : gdal2tiles = TMS -> Y inversé
         attribution: '&copy; DV Drone - Orthophoto',
-        detectRetina: true
       }
     ).addTo(map);
 
@@ -291,9 +301,9 @@
     var dtm = L.tileLayer(
       'https://dvdrone-datasets.s3.ca-central-1.amazonaws.com/test001/tiles_dtm/{z}/{x}/{y}.png',
       {
-        minZoom: 10,
+        minZoom: 15,
         maxZoom: 22,
-        opacity: 0.7,
+        tms: true,      // IMPORTANT : gdal2tiles = TMS -> Y inversé
         attribution: '&copy; DV Drone – DTM',
       }
     );
@@ -302,9 +312,9 @@
     var dsm = L.tileLayer(
       'https://dvdrone-datasets.s3.ca-central-1.amazonaws.com/test001/tiles_dsm/{z}/{x}/{y}.png',
       {
-        minZoom: 10,
+        minZoom: 15,
         maxZoom: 22,
-        opacity: 0.6,
+        tms: true,      // IMPORTANT : gdal2tiles = TMS -> Y inversé
         attribution: '&copy; DV Drone – DSM',
       }
     );
@@ -321,14 +331,14 @@
 
     // --- Contrôle de couches ---
     var baseMaps = {
-      "Orthophoto (Drone Abitibi)": orthophoto,
       "Esri World Imagery": esriImagery,
-      "OpenStreetMap": osm
+      "openStreetMap": osm
     };
 
     var overlayMaps = {
-      "DTM (MNT)": dtm,
-      "DSM": dsm,
+      "Orthophoto (Drone Abitibi)": orthophoto,
+      "DTM (Drone Abitibi)": dtm,
+      "DSM (Drone Abitibi)": dsm,
     };
 
     L.control.layers(baseMaps, overlayMaps, {
