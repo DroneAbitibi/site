@@ -260,9 +260,9 @@
 
     // --- Couches de base / overlays ---
     // 1) Orthophoto (base)
-    // Remplace l'URL par ton serveur de tuiles / tiles XYZ
+    // Source tuile orthophoto
     var orthophoto = L.tileLayer(
-      'https://example.com/tiles/orthophoto/{z}/{x}/{y}.png',
+      'https://accesspoint-dvdrone-440913182469.s3-accesspoint.ca-central-1.amazonaws.com/test001/tiles_ortho/{z}/{x}/{y}.png',
       {
         maxZoom: 22,
         attribution: '&copy; Source orthophoto',
@@ -272,7 +272,7 @@
 
     // 2) DTM (MNT) – souvent visualisé en ombrage (hillshade) ou palette de couleurs
     var dtm = L.tileLayer(
-      'https://example.com/tiles/dtm-hillshade/{z}/{x}/{y}.png',
+      'https://accesspoint-dvdrone-440913182469.s3-accesspoint.ca-central-1.amazonaws.com/test001/tiles_dtm/{z}/{x}/{y}.png',
       {
         maxZoom: 22,
         opacity: 0.7,
@@ -283,7 +283,7 @@
 
     // 3) DSM – modèle numérique de surface
     var dsm = L.tileLayer(
-      'https://example.com/tiles/dsm-hillshade/{z}/{x}/{y}.png',
+      'https://accesspoint-dvdrone-440913182469.s3-accesspoint.ca-central-1.amazonaws.com/test001/tiles_dsm/{z}/{x}/{y}.png',
       {
         maxZoom: 22,
         opacity: 0.6,
