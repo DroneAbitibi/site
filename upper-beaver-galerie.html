@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Galerie Upper Beaver – Drone Abitibi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <style>
+    :root {
+      --bg1: #0f1c0f;
+      --bg2: #263321;
+      --panel: rgba(15, 28, 15, 0.8);
+      --card: #f5f7f5;
+      --text: #e8f0e6;
+      --muted: #cfd9cc;
+      --accent: #a9c48a;
+      --shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(145deg, var(--bg1), var(--bg2));
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 32px 18px 48px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1100px;
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: var(--shadow);
+      border-radius: 16px;
+      padding: 28px;
+      backdrop-filter: blur(6px);
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(24px, 4vw, 32px);
+    }
+
+    p.lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 12px;
+      border-radius: 12px;
+      margin-top: 8px;
+      font-size: 14px;
+      color: var(--muted);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .card {
+      position: relative;
+      background: var(--card);
+      color: #0f1c0f;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .card img {
+      display: block;
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card figcaption {
+      padding: 12px 14px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    a.card-link {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+      height: 100%;
+    }
+
+    .footer {
+      margin-top: 26px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .back-link:hover { background: rgba(255, 255, 255, 0.12); transform: translateY(-2px); }
+
+    .note {
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px dashed rgba(255, 255, 255, 0.24);
+      border-radius: 12px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>Galerie Upper Beaver</h1>
+      <p class="lead">Sélection d'images aériennes captées à Upper Beaver. Chaque vignette ouvre la version originale afin de faciliter les téléchargements ou le partage ponctuel.</p>
+      <div class="meta">Page non répertoriée – partage direct par URL uniquement.</div>
+    </header>
+
+    <section class="gallery" aria-label="Galerie des images Upper Beaver">
+      <figure class="card">
+        <a class="card-link" href="Upper-Beaver/Upper-Beaver-01.jpg">
+          <img src="Upper-Beaver/Upper-Beaver-01.jpg" alt="Vue aérienne Upper Beaver 01">
+          <figcaption>Upper-Beaver-01.jpg</figcaption>
+        </a>
+      </figure>
+      <figure class="card">
+        <a class="card-link" href="Upper-Beaver/Upper-Beaver-02.jpg">
+          <img src="Upper-Beaver/Upper-Beaver-02.jpg" alt="Vue aérienne Upper Beaver 02">
+          <figcaption>Upper-Beaver-02.jpg</figcaption>
+        </a>
+      </figure>
+      <figure class="card">
+        <a class="card-link" href="Upper-Beaver/Upper-Beaver-03.jpg">
+          <img src="Upper-Beaver/Upper-Beaver-03.jpg" alt="Vue aérienne Upper Beaver 03">
+          <figcaption>Upper-Beaver-03.jpg</figcaption>
+        </a>
+      </figure>
+      <figure class="card">
+        <a class="card-link" href="Upper-Beaver/Upper-Beaver-04.jpg">
+          <img src="Upper-Beaver/Upper-Beaver-04.jpg" alt="Vue aérienne Upper Beaver 04">
+          <figcaption>Upper-Beaver-04.jpg</figcaption>
+        </a>
+      </figure>
+      <figure class="card">
+        <a class="card-link" href="Upper-Beaver/Upper-Beaver-05.jpg">
+          <img src="Upper-Beaver/Upper-Beaver-05.jpg" alt="Vue aérienne Upper Beaver 05">
+          <figcaption>Upper-Beaver-05.jpg</figcaption>
+        </a>
+      </figure>
+      <figure class="card">
+        <a class="card-link" href="Upper-Beaver/Upper-Beaver-06.jpg">
+          <img src="Upper-Beaver/Upper-Beaver-06.jpg" alt="Vue aérienne Upper Beaver 06">
+          <figcaption>Upper-Beaver-06.jpg</figcaption>
+        </a>
+      </figure>
+      <figure class="card">
+        <a class="card-link" href="Upper-Beaver/Upper-Beaver-07.jpg">
+          <img src="Upper-Beaver/Upper-Beaver-07.jpg" alt="Vue aérienne Upper Beaver 07">
+          <figcaption>Upper-Beaver-07.jpg</figcaption>
+        </a>
+      </figure>
+      <figure class="card">
+        <a class="card-link" href="Upper-Beaver/Upper-Beaver-08.jpg">
+          <img src="Upper-Beaver/Upper-Beaver-08.jpg" alt="Vue aérienne Upper Beaver 08">
+          <figcaption>Upper-Beaver-08.jpg</figcaption>
+        </a>
+      </figure>
+      <figure class="card">
+        <a class="card-link" href="Upper-Beaver/Upper-Beaver-09.jpg">
+          <img src="Upper-Beaver/Upper-Beaver-09.jpg" alt="Vue aérienne Upper Beaver 09">
+          <figcaption>Upper-Beaver-09.jpg</figcaption>
+        </a>
+      </figure>
+      <figure class="card">
+        <a class="card-link" href="Upper-Beaver/Upper-Beaver-10.jpg">
+          <img src="Upper-Beaver/Upper-Beaver-10.jpg" alt="Vue aérienne Upper Beaver 10">
+          <figcaption>Upper-Beaver-10.jpg</figcaption>
+        </a>
+      </figure>
+      <figure class="card">
+        <a class="card-link" href="Upper-Beaver/Upper-Beaver-11.jpg">
+          <img src="Upper-Beaver/Upper-Beaver-11.jpg" alt="Vue aérienne Upper Beaver 11">
+          <figcaption>Upper-Beaver-11.jpg</figcaption>
+        </a>
+      </figure>
+      <figure class="card">
+        <a class="card-link" href="Upper-Beaver/Upper-Beaver-12.jpg">
+          <img src="Upper-Beaver/Upper-Beaver-12.jpg" alt="Vue aérienne Upper Beaver 12">
+          <figcaption>Upper-Beaver-12.jpg</figcaption>
+        </a>
+      </figure>
+      <figure class="card">
+        <a class="card-link" href="Upper-Beaver/Upper-Beaver-13.jpg">
+          <img src="Upper-Beaver/Upper-Beaver-13.jpg" alt="Vue aérienne Upper Beaver 13">
+          <figcaption>Upper-Beaver-13.jpg</figcaption>
+        </a>
+      </figure>
+      <figure class="card">
+        <a class="card-link" href="Upper-Beaver/Upper-Beaver-14.jpg">
+          <img src="Upper-Beaver/Upper-Beaver-14.jpg" alt="Vue aérienne Upper Beaver 14">
+          <figcaption>Upper-Beaver-14.jpg</figcaption>
+        </a>
+      </figure>
+      <figure class="card">
+        <a class="card-link" href="Upper-Beaver/Upper-Beaver-15.jpg">
+          <img src="Upper-Beaver/Upper-Beaver-15.jpg" alt="Vue aérienne Upper Beaver 15">
+          <figcaption>Upper-Beaver-15.jpg</figcaption>
+        </a>
+      </figure>
+      <figure class="card">
+        <a class="card-link" href="Upper-Beaver/Upper-Beaver-16.jpg">
+          <img src="Upper-Beaver/Upper-Beaver-16.jpg" alt="Vue aérienne Upper Beaver 16">
+          <figcaption>Upper-Beaver-16.jpg</figcaption>
+        </a>
+      </figure>
+      <figure class="card">
+        <a class="card-link" href="Upper-Beaver/Upper-Beaver-17.jpg">
+          <img src="Upper-Beaver/Upper-Beaver-17.jpg" alt="Vue aérienne Upper Beaver 17">
+          <figcaption>Upper-Beaver-17.jpg</figcaption>
+        </a>
+      </figure>
+      <figure class="card">
+        <a class="card-link" href="Upper-Beaver/Upper-Beaver-18.jpg">
+          <img src="Upper-Beaver/Upper-Beaver-18.jpg" alt="Vue aérienne Upper Beaver 18">
+          <figcaption>Upper-Beaver-18.jpg</figcaption>
+        </a>
+      </figure>
+    </section>
+
+    <div class="footer">
+      <a class="back-link" href="./">
+        ← Retour à l'accueil
+      </a>
+      <span class="note">Cette page n'est pas listée dans la navigation principale. Partagez simplement cette URL pour donner accès à la galerie.</span>
+    </div>
+  </main>
+</body>
+</html>
