@@ -73,34 +73,45 @@
       border-radius: 10px;
     }
 
-    .gallery {
+    #gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 0;
       margin-top: 12px;
     }
 
-    .card {
+    .ph {
       position: relative;
-      background: transparent;
-      color: #0f1c0f;
-      border-radius: 0;
-      padding: 0;
+      margin: 0;
       overflow: hidden;
-      box-shadow: none;
     }
 
-    .card img {
+    .ph img {
       display: block;
       width: 100%;
       height: auto;
       border-radius: 0;
+      cursor: pointer;
     }
+
+    .btn {
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      background: rgba(255, 255, 255, 0.08);
+      color: #f5f7f5;
+      padding: 10px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn:hover { background: rgba(255, 255, 255, 0.16); transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
 
     @media (max-width: 700px) {
       body { padding: 20px 12px 32px; }
 
-      .gallery {
+      #gallery {
         grid-template-columns: 1fr;
       }
     }
@@ -149,62 +160,7 @@
       <div class="meta">Page non répertoriée – partage direct par URL uniquement.</div>
     </header>
 
-    <section class="gallery" aria-label="Galerie des images Upper Beaver">
-      <figure class="card">
-        <img src="Upper-Beaver/Upper-Beaver-01.jpg" alt="Vue aérienne Upper Beaver 01">
-      </figure>
-      <figure class="card">
-        <img src="Upper-Beaver/Upper-Beaver-02.jpg" alt="Vue aérienne Upper Beaver 02">
-      </figure>
-      <figure class="card">
-        <img src="Upper-Beaver/Upper-Beaver-03.jpg" alt="Vue aérienne Upper Beaver 03">
-      </figure>
-      <figure class="card">
-        <img src="Upper-Beaver/Upper-Beaver-04.jpg" alt="Vue aérienne Upper Beaver 04">
-      </figure>
-      <figure class="card">
-        <img src="Upper-Beaver/Upper-Beaver-05.jpg" alt="Vue aérienne Upper Beaver 05">
-      </figure>
-      <figure class="card">
-        <img src="Upper-Beaver/Upper-Beaver-06.jpg" alt="Vue aérienne Upper Beaver 06">
-      </figure>
-      <figure class="card">
-        <img src="Upper-Beaver/Upper-Beaver-07.jpg" alt="Vue aérienne Upper Beaver 07">
-      </figure>
-      <figure class="card">
-        <img src="Upper-Beaver/Upper-Beaver-08.jpg" alt="Vue aérienne Upper Beaver 08">
-      </figure>
-      <figure class="card">
-        <img src="Upper-Beaver/Upper-Beaver-09.jpg" alt="Vue aérienne Upper Beaver 09">
-      </figure>
-      <figure class="card">
-        <img src="Upper-Beaver/Upper-Beaver-10.jpg" alt="Vue aérienne Upper Beaver 10">
-      </figure>
-      <figure class="card">
-        <img src="Upper-Beaver/Upper-Beaver-11.jpg" alt="Vue aérienne Upper Beaver 11">
-      </figure>
-      <figure class="card">
-        <img src="Upper-Beaver/Upper-Beaver-12.jpg" alt="Vue aérienne Upper Beaver 12">
-      </figure>
-      <figure class="card">
-        <img src="Upper-Beaver/Upper-Beaver-13.jpg" alt="Vue aérienne Upper Beaver 13">
-      </figure>
-      <figure class="card">
-        <img src="Upper-Beaver/Upper-Beaver-14.jpg" alt="Vue aérienne Upper Beaver 14">
-      </figure>
-      <figure class="card">
-        <img src="Upper-Beaver/Upper-Beaver-15.jpg" alt="Vue aérienne Upper Beaver 15">
-      </figure>
-      <figure class="card">
-        <img src="Upper-Beaver/Upper-Beaver-16.jpg" alt="Vue aérienne Upper Beaver 16">
-      </figure>
-      <figure class="card">
-        <img src="Upper-Beaver/Upper-Beaver-17.jpg" alt="Vue aérienne Upper Beaver 17">
-      </figure>
-      <figure class="card">
-        <img src="Upper-Beaver/Upper-Beaver-18.jpg" alt="Vue aérienne Upper Beaver 18">
-      </figure>
-    </section>
+    <section id="gallery" aria-label="Galerie des images Upper Beaver"></section>
 
     <div class="footer">
       <a class="back-link" href="index.html">
@@ -213,5 +169,28 @@
       <span class="note">Cette page n'est pas listée dans la navigation principale. Partagez simplement cette URL pour donner accès à la galerie.</span>
     </div>
   </main>
+  <script>
+    window.PHOTOS = [
+      { src: "Upper-Beaver/Upper-Beaver-01.jpg", alt: "Vue aérienne Upper Beaver 01" },
+      { src: "Upper-Beaver/Upper-Beaver-02.jpg", alt: "Vue aérienne Upper Beaver 02" },
+      { src: "Upper-Beaver/Upper-Beaver-03.jpg", alt: "Vue aérienne Upper Beaver 03" },
+      { src: "Upper-Beaver/Upper-Beaver-04.jpg", alt: "Vue aérienne Upper Beaver 04" },
+      { src: "Upper-Beaver/Upper-Beaver-05.jpg", alt: "Vue aérienne Upper Beaver 05" },
+      { src: "Upper-Beaver/Upper-Beaver-06.jpg", alt: "Vue aérienne Upper Beaver 06" },
+      { src: "Upper-Beaver/Upper-Beaver-07.jpg", alt: "Vue aérienne Upper Beaver 07" },
+      { src: "Upper-Beaver/Upper-Beaver-08.jpg", alt: "Vue aérienne Upper Beaver 08" },
+      { src: "Upper-Beaver/Upper-Beaver-09.jpg", alt: "Vue aérienne Upper Beaver 09" },
+      { src: "Upper-Beaver/Upper-Beaver-10.jpg", alt: "Vue aérienne Upper Beaver 10" },
+      { src: "Upper-Beaver/Upper-Beaver-11.jpg", alt: "Vue aérienne Upper Beaver 11" },
+      { src: "Upper-Beaver/Upper-Beaver-12.jpg", alt: "Vue aérienne Upper Beaver 12" },
+      { src: "Upper-Beaver/Upper-Beaver-13.jpg", alt: "Vue aérienne Upper Beaver 13" },
+      { src: "Upper-Beaver/Upper-Beaver-14.jpg", alt: "Vue aérienne Upper Beaver 14" },
+      { src: "Upper-Beaver/Upper-Beaver-15.jpg", alt: "Vue aérienne Upper Beaver 15" },
+      { src: "Upper-Beaver/Upper-Beaver-16.jpg", alt: "Vue aérienne Upper Beaver 16" },
+      { src: "Upper-Beaver/Upper-Beaver-17.jpg", alt: "Vue aérienne Upper Beaver 17" },
+      { src: "Upper-Beaver/Upper-Beaver-18.jpg", alt: "Vue aérienne Upper Beaver 18" }
+    ];
+  </script>
+  <script src="gallery.js"></script>
 </body>
 </html>
